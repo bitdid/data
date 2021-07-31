@@ -127,5 +127,19 @@ namespace Bitdid.Storage.Core {
         //    => await base.Database.MigrateAsync(cancellationToken);
 
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder builder) {
+            base.OnModelCreating(builder);
+
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new CurrencyConfiguration());
+            builder.ApplyConfiguration(new CurrencyMetadataConfiguration());
+            builder.ApplyConfiguration(new CurrencyPriceConfiguration());
+            builder.ApplyConfiguration(new ExchangeConfiguration());
+            builder.ApplyConfiguration(new ExchangeMarketPairConfiguration());
+            builder.ApplyConfiguration(new MarketPairConfiguration());
+            builder.ApplyConfiguration(new TagConfiguration());
+            builder.ApplyConfiguration(new CurrencyTagConfiguration());
+        }
     }
 }
