@@ -34,6 +34,8 @@ namespace Bitdid.Storage.Core {
 
         public DbSet<MarketPair> MarketPairs { get; set; }
 
+        public DbSet<MarketPairHistorical> MarketPairHistoricalData { get; set; }
+
         public DbSet<Tag> Tags { get; set; }
 
         #endregion
@@ -140,6 +142,7 @@ namespace Bitdid.Storage.Core {
             builder.ApplyConfiguration(new MarketPairConfiguration());
             builder.ApplyConfiguration(new TagConfiguration());
             builder.ApplyConfiguration(new CurrencyTagConfiguration());
+            builder.ApplyConfiguration(new MarketPairHistoricalConfiguration());
         }
     }
 }
